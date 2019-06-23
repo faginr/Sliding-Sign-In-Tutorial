@@ -148,7 +148,7 @@ button.ghost {
 .overlay {
   /* for browsers that do not do gradients */
   background: #ff416c;
-  background: linear-gradient(to right, #b3ff00, #16e65b) no-repeat 0 0 / cover;
+  background: linear-gradient(to right, #19ec06, #16e67e) no-repeat 0 0 / cover;
   color: white;
   position: relative;
   left: -100%;
@@ -181,13 +181,43 @@ button.ghost {
 }
 
 .overlay-left {
-    transform: translateX(-20%);
-    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.2), 0px 8px 13px rgba(0, 0, 0, 0.1),
-      0px 18px 23px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Animations */
+  transform: translateX(-20%);
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.2), 0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1);
+}
 
-  /* Move SignIn to the right */
+/* Animations */
 
-  .container
+/* Move SignIn to the right */
+
+.container.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+}
+
+/* Move SignUp ovelay to the right */
+
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+/* Move sign up over top of sign in */
+
+.container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+/* Move overlay back to right */
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.container.right-panel-active .overlay-left{
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right{
+  transform: translateX(20%);
+}
+
